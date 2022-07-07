@@ -19,7 +19,7 @@ public class LongEventHandler implements EventHandler<LongEvent>
     {
         if ((sequence % numberOfConsumers) == ordinal)
         {
-            System.out.println("Id is " + event.get() + " sequence id that was used is " + sequence);
+            System.out.println("Data received "+event.get()+" on sequence "+sequence);
         }
 
     }

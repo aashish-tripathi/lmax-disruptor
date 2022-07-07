@@ -19,7 +19,7 @@ public class ValueEventHandler implements EventHandler<ValueEvent> {
     {
         if ((sequence % numberOfConsumers) == ordinal)
         {
-            System.out.println("Id is " + event.getValue() + " sequence id that was used is " + sequence);
+            System.out.println("Data received "+event.getValue()+" on sequence "+sequence);
         }
 
     }
