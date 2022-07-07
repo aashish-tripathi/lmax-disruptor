@@ -1,5 +1,7 @@
 package com.ashish.lmax;
 
+import com.ashish.lmax.events.ValueEvent;
+import com.ashish.lmax.handlers.ValueEventHandler;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.util.DaemonThreadFactory;
@@ -12,7 +14,7 @@ public class Main {
         int bufferSize = 16;
         Disruptor<ValueEvent> disruptor =
                 new Disruptor<>(ValueEvent::new, bufferSize, DaemonThreadFactory.INSTANCE);
-        ValueEventHandler [] eventHandlers = {new ValueEventHandler(0,4),
+        ValueEventHandler[] eventHandlers = {new ValueEventHandler(0,4),
                 new ValueEventHandler(1,4),
                 new ValueEventHandler(2,4),
                 new ValueEventHandler(3,4)};

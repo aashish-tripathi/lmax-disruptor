@@ -1,8 +1,7 @@
-package com.ashish.lmax;
+package com.ashish.lmax.handlers;
 
+import com.ashish.lmax.events.ValueEvent;
 import com.lmax.disruptor.EventHandler;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 
 public class ValueEventHandler implements EventHandler<ValueEvent> {
 

@@ -1,4 +1,4 @@
-package com.ashish.lmax;
+package com.ashish.lmax.events;
 
 public final class ValueEvent {
 

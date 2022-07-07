@@ -1,5 +1,6 @@
-package com.ashish.lmax;
+package com.ashish.lmax.handlers;
 
+import com.ashish.lmax.events.LongEvent;
 import com.lmax.disruptor.EventHandler;
 
 public class LongEventHandler implements EventHandler<LongEvent>
