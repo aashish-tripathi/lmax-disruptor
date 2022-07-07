@@ -38,13 +38,14 @@ public class Main {
 
 
         RingBuffer<TradeEvent> ringBuffer = disruptor.getRingBuffer();
-        //ByteBuffer bb = ByteBuffer.allocate(1024);
+        ByteBuffer bb = ByteBuffer.allocate(1024);
         for (int l = 0; true; l++) {
             Trade trade = Trade.getInstance();
-            /*byte[] data = SerializationUtils.serialize(trade);
-            bb.put(data);*/
-            ringBuffer.publishEvent((event, sequence, buffer) -> event.setTrade(trade));
-            Thread.sleep(1);
+            byte[] data = SerializationUtils.serialize(trade);
+            bb.put(data,0,data.length);
+            ringBuffer.publishEvent((event, sequence, buffer) -> event.setTrade(bb.array()));
+            bb.rewind();
+            Thread.sleep(1000);
         }
     }
 

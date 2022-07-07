@@ -16,7 +16,7 @@ public class TradeEventHandler implements EventHandler<TradeEvent> {
     @Override
     public void onEvent(TradeEvent event, long sequence, boolean endOfBatch) {
         if ((sequence % numberOfConsumers) == ordinal) {
-            System.out.println("Id is " + event.getTrade() + " sequence id that was used is " + sequence);
+            System.out.println("Data received "+event.getTradeFromBuffer()+" on sequence "+sequence);
         }
 
     }
